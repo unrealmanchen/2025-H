@@ -1,0 +1,9 @@
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.axf
+*.lst
+*.log
+*.crf

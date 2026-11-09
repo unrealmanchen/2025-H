@@ -1,0 +1,84 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 2 2, 2, LIC=GMZI6-DU6J4-452T5-GBR8I-Q96MQ-6PG0H
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\Code\stm32\DianSai\MDK-ARM\DianSai.uvprojx
+Project File Date:  07/19/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'DianSai'
+compiling main_task.c...
+..\task\main_task.c(26): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "void *restrict"
+      memcpy(send, data, num * 4);
+..\task\main_task.c(34): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
+      HAL_UART_Transmit_DMA(&huart1, (char *)send, total_bytes);
+..\task\main_task.c(47): warning:  #144-D: a value of type "void (*)(void)" cannot be used to initialize an entity of type "os_pthread"
+      osThreadDef(maintask, main_task, osPriorityNormal, 0, 256);
+..\task\main_task.c(82): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+      HAL_UARTEx_ReceiveToIdle_DMA(&huart2, buffer, sizeof(buffer));
+..\task\main_task.c(118): warning:  #167-D: argument of type "volatile pid_t *" is incompatible with parameter of type "pid_t *"
+          float w = PID_calc(&(motor_yaw.pid_deg), deg_input, 0);
+..\task\main_task.c(119): warning:  #167-D: argument of type "volatile pid_t *" is incompatible with parameter of type "pid_t *"
+          fp32 current_data = PID_calc(&(motor_yaw.pid_w), motor_yaw.data.speed, w - quene_data[4] * 9.5493f);//-quene_data[4] * 9.5493f
+..\task\main_task.c(125): warning:  #167-D: argument of type "volatile pid_t *" is incompatible with parameter of type "pid_t *"
+          float w_p = PID_calc(&(motor_pitch.pid_deg), deg_input_p, 0);
+..\task\main_task.c(126): warning:  #167-D: argument of type "volatile pid_t *" is incompatible with parameter of type "pid_t *"
+          fp32 current_data_p = PID_calc(&(motor_pitch.pid_w), motor_pitch.data.speed, w_p + quene_data[3] * 9.5493f );//+
+..\task\main_task.c(108): warning:  #177-D: variable "count"  was declared but never referenced
+      int count = 0;
+..\task\main_task.c(198): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+          HAL_UARTEx_ReceiveToIdle_DMA(&huart2, buffer, sizeof(buffer));
+..\task\main_task.c(206): warning:  #1-D: last line of file ends without a newline
+  }
+..\task\main_task.c: 11 warnings, 0 errors
+linking...
+Program Size: Code=46944 RO-data=3136 RW-data=580 ZI-data=36988  
+FromELF: creating hex file...
+"DianSai\DianSai.axf" - 0 Error(s), 11 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.3.0.pack
+                ARM.CMSIS.6.3.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.2.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.14.0.pack
+                Keil.STM32F4xx_DFP.2.14.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_DianSai
+  C:\Users\csh_L\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include
+  C:\Users\csh_L\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:6.2.0
+      Include file:  CMSIS\Core\Include\tz_context.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
